@@ -6,5 +6,4 @@ resource_name   = "abhi-res-1"
 cidr_vm         = ["10.0.0.0/24"]
 prefix          = 0
 tags            = { name = "abhishek", env = "dev" }
-#subscription_id = "ef03f41d-d2bd-4691-b3a0-3aff1c6711f7"
 
