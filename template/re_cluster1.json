@@ -9,9 +9,10 @@
             "name": "${re_name}",
             "location": "${location}",
             "dependsOn": [],
-            "tags": {
-                "name": "abhishek",
-                "env": "dev"
+            "tags": { 
+                "name" : "test", 
+                "foo" : "bar",
+                "env" : "dev" 
             },
             "sku": {
                 "name": "Enterprise_E10",
@@ -46,7 +47,7 @@
                             "rdbEnabled": false
                         },
                         "geoReplication": {
-                            "groupNickname": "abhi-test-repl",
+                            "groupNickname": "${replication_name}",
                             "linkedDatabases": [
                                 {
                                     "id": "/subscriptions/${subscription_id}/resourceGroups/${resource_grp_name}/providers/Microsoft.Cache/redisEnterprise/${re_name}/databases/default"
