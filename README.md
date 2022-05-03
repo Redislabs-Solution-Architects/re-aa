@@ -1,2 +1,2 @@
 # re-aa
-Redis enterprise Active-Active ACRE
+Simple implementation of Active geo-replication (Active-Active) in Azure Cache for Redis Enterprise

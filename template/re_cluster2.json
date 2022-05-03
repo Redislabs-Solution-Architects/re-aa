@@ -6,13 +6,13 @@
         {
             "type": "Microsoft.Cache/redisEnterprise",
             "apiVersion": "2021-02-01-preview",
-            "name": "${re_name_2}",
+            "name": "${re_name}",
             "location": "${location}",
             "dependsOn": [],
-            "tags": {
-                "name": "abhishek",
-                "env": "dev",
-                "tier": "secondary"
+            "tags": { 
+                "name" : "test", 
+                "foo" : "bar",
+                "env" : "dev" 
             },
             "sku": {
                 "name": "Enterprise_E10",
@@ -29,7 +29,7 @@
             "apiVersion": "2017-05-10",
             "name": "${re1_deployment_name}",
             "dependsOn": [
-                "${re_name_2}"
+                "${re_name}"
             ],
             "properties": {
                 "mode": "Incremental",
@@ -41,7 +41,7 @@
                     "variables": {},
                     "resources": [
                         {
-                            "name": "${re_name_1}/default",
+                            "name": "${re1_deployment_name}/default",
                             "type": "Microsoft.Cache/redisEnterprise/databases",
                             "apiVersion": "2021-02-01-preview",
                             "properties": {
@@ -59,13 +59,13 @@
                                     "rdbEnabled": false
                                 },
                                 "geoReplication": {
-                                    "groupNickname": "abhi-test-repl",
+                                    "groupNickname": "${replication_name}",
                                     "linkedDatabases": [
                                         {
-                                            "id": "/subscriptions/${subscription_id}/resourcegroups/${resource_grp_name}/providers/microsoft.cache/redisenterprise/${re_name_1}/databases/default"
+                                            "id": "/subscriptions/${subscription_id}/resourcegroups/${resource_grp_name}/providers/microsoft.cache/redisenterprise/${re1_deployment_name}/databases/default"
                                         },
                                         {
-                                            "id": "/subscriptions/${subscription_id}/resourceGroups/${resource_grp_name}/providers/Microsoft.Cache/redisEnterprise/${re_name_2}/databases/default"
+                                            "id": "/subscriptions/${subscription_id}/resourceGroups/${resource_grp_name}/providers/Microsoft.Cache/redisEnterprise/${re_name}/databases/default"
                                         }
                                     ]
                                 }
