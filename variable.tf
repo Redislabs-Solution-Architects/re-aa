@@ -30,6 +30,7 @@ variable "re_cluster2_name" {
 
 variable "prefix" {
   type = string
+  default = "0"
 }
 
 variable "tags" {
